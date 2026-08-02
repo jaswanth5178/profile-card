@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-area">
+      <div class="inner-area">
+        <img src="profile.png" alt="">
+      </div>
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name">Pattupogula Jaswanth</div>
+    <div class="about">Java Fullstack Developer</div>
+    <div class="social-icons"> 
+      <a href="https://www.linkedin.com/in/pattupogula-jaswanth-97b69326b/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a> 
+      <a href="https://x.com/jaswanth5178" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a> 
+      <a href="https://github.com/jaswanth5178" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/jaswanth5178/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a> 
+      <a href="https://www.facebook.com/jaswanth2004" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>  
+    </div>
+
+    <div class="buttons">
+      <button id="msgBtn">Message</button>
+      <button>Subscribe</button>
+    </div>
+    <div class="social-share">
+      <div class="row">
+        <i class="far fa-heart"></i>
+        <i class="icon-2 fas fa-heart"></i>
+        <span>20.4k</span>
+      </div>
+      <div class="row">
+        <i class="far fa-comment"></i>
+        <i class="icon-2 fas fa-comment"></i>
+        <span>14.3k</span>
+      </div>
+      <div class="row">
+        <i class="fas fa-share"></i>
+        <span>12.8k</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Message Input Form Popup Base Layout -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Send a Message</h3>
+      <form id="msgForm">
+        <div class="input-box">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="input-box">
+          <input type="tel" placeholder="Your Mobile Number" pattern="[0-9]{10,15}" title="Please enter a valid mobile number" required>
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Your Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" required>
+        </div>
+        <div class="input-box">
+          <textarea placeholder="Type your message details here..." rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Action Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("messageModal");
+      const openBtn = document.getElementById("msgBtn");
+      const closeBtn = document.querySelector(".close-btn");
+      const form = document.getElementById("msgForm");
+
+      // Verify buttons exist before assigning events
+      if (openBtn && modal) {
+        openBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.style.display = "flex";
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      }
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Success! Your message details have been submitted.");
+          form.reset();
+          modal.style.display = "none";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
