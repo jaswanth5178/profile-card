@@ -48,7 +48,6 @@
     </div>
   </div>
 
-  <!-- User Message Input Form Popup Base Layout -->
   <div id="messageModal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -71,7 +70,6 @@
     </div>
   </div>
 
-  <!-- Interactive Action Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const modal = document.getElementById("messageModal");
@@ -79,7 +77,6 @@
       const closeBtn = document.querySelector(".close-btn");
       const form = document.getElementById("msgForm");
 
-      // Verify buttons exist before assigning events
       if (openBtn && modal) {
         openBtn.addEventListener("click", (e) => {
           e.preventDefault();
