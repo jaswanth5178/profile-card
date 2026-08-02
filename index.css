@@ -195,14 +195,14 @@ body{
   pointer-events: auto;
 }
 
-/* Brand configurations */
+
 .social-icons a.linkedin i { color: #0077B5; }
 .social-icons a.twitter i { color: #1DA1F2; }
 .social-icons a.github i { color: #24292e; }
 .social-icons a.insta i { color: #E1306C; }
 .social-icons a.fb i { color: #4267B2; }
 
-/* Fixed Modal Box Design Styles */
+
 .modal {
   display: none; 
   position: fixed; 
